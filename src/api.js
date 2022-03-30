@@ -8,7 +8,7 @@ export const getAllData = async (limit = 10, offset = 0) => {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.log("error");
+    console.log(error);
   }
 };
 
@@ -19,5 +19,7 @@ export const getPokemon = async (api_url) => {
     const response = await fetch(api_url);
     const data = await response.json();
     return data;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
