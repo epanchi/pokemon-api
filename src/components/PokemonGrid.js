@@ -3,11 +3,13 @@ import PokemonDetail from "./PokemonDetail";
 import Navigation from "./Navigation";
 
 const PokemonGrid = (props) => {
-  const { pokemons } = props;
+  const { pokemons, total } = props;
 
   return (
     <div className="container">
-      <Navigation />
+      <div className="pagination">
+        <Navigation total={total} />
+      </div>
       <div className="all-container">
         {pokemons.map((pokemon, index) => {
           return (

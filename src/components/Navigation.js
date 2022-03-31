@@ -1,6 +1,7 @@
 import React from "react";
 
-const Navigation =()=>{
+const Navigation =(props)=>{
+    const {total} = props;
     function onPreviousClick(e){
         console.log('previous');
     }
@@ -8,9 +9,10 @@ const Navigation =()=>{
         console.log('next');
     }
     return (
+        
         <nav>
             <button onClick={onPreviousClick} >Previous</button>
-            <span>+</span>
+            <span>1 to {total} </span>
             <button onClick={onNextClick}>Next</button>
         </nav>
     )
