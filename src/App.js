@@ -20,8 +20,10 @@ const App = () => {
     console.log(page);
   };
 
+  // Function
   const getAllPokemons = async () => {
-    const data = await getAllData();
+
+    const data = await getAllData(10, 10*page);
     setTotal(data.count);
 
     // Set Promises
@@ -35,7 +37,7 @@ const App = () => {
   // to perform some efects when certain changes ocurr in state
   useEffect(() => {
     getAllPokemons();
-  }, []);
+  }, [page]);
   let imgUrl =
     "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
   return (
@@ -49,6 +51,7 @@ const App = () => {
         total={total}
         onPreviousClick={lastPage}
         onNextClick={nextPage}
+        page={page}
       />
     </div>
   );
