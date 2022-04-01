@@ -3,12 +3,12 @@ import PokemonDetail from "./PokemonDetail";
 import Navigation from "./Navigation";
 
 const PokemonGrid = (props) => {
-  const { pokemons, total } = props;
+  const { pokemons, total, onPreviousClick, onNextClick } = props;
 
   return (
     <div className="container">
       <div className="pagination">
-        <Navigation total={total} />
+        <Navigation total={total} onPreviousClick={onPreviousClick} onNextClick={onNextClick} />
       </div>
       <div className="all-container">
         {pokemons.map((pokemon, index) => {
